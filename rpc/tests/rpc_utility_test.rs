@@ -140,7 +140,6 @@ fn generate_invoice_with_description_hash(lightningd: LightningRPC) {
             Some(true),
         )
         .unwrap();
-    println!("{:?}", invoice);
     let decode = lightningd.decodepay(&invoice.bolt11, None).unwrap();
     assert_eq!(decode.amount_msat, Some(MSat(1)));
     assert_eq!(decode.description_hash, Some("62af1b6b91d49301648cb3e6e5c88ced5d72a8c1db3e6711dcf89add72436479".to_string()));
