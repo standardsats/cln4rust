@@ -167,7 +167,7 @@ async fn basic_test() {
             tokio::time::sleep(std::time::Duration::from_millis(10000)).await;
         }
 
-        let listpays = cln_back.listsendpays(None, None).expect("Sent payments");
+        let listpays = cln_back.listsendpays(None, None, None).expect("Sent payments");
         for p in listpays.payments {
             println!("Payment {:?}", p);
         }

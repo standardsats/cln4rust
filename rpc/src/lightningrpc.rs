@@ -308,12 +308,14 @@ impl LightningRPC {
         &self,
         bolt11: Option<&str>,
         payment_hash: Option<&str>,
+        status: Option<&str>,
     ) -> Result<responses::ListSendPays, Error> {
         self.call(
             "listsendpays",
             requests::ListSendPays {
                 bolt11,
                 payment_hash,
+                status,
             },
         )
     }

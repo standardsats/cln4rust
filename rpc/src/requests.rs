@@ -206,6 +206,8 @@ pub struct ListSendPays<'a> {
     pub bolt11: Option<&'a str>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub payment_hash: Option<&'a str>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub status: Option<&'a str>,
 }
 
 /// 'decodepay' command
